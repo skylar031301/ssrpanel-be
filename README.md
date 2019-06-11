@@ -1,10 +1,13 @@
+ssrmu
 
-利用docker部署 ssrpanel面板使用的后端
+//开启bbr
+wget -N --no-check-certificate "https://raw.githubusercontent.com/chiakge/Linux-NetSpeed/master/tcp.sh"
+chmod +x tcp.sh
+./tcp.sh
 
+//安装docker
+apt-get install docker.io
 
-# 食用方法 
-- [nginx](https://github.com/kszym2002/ssrpanel-be/wiki/nginx-proxy)
-- [DDNS](https://github.com/kszym2002/ssrpanel-be/wiki/Dynamic-IP-ddns-docker)
-- [caddy](https://github.com/kszym2002/ssrpanel-be/wiki/caddy-proxy)
-- [caddy+H2+TLS]()
-- [ssrmu与v2ray-docker](https://github.com/kszym2002/ssrpanel-be/wiki/ssrmu-%E4%B8%8E-v2ray-%E5%AE%B9%E5%99%A8%E6%9B%B4%E6%96%B0%E6%97%A5%E5%BF%97-%E4%B8%8E%E7%89%88%E6%9C%AC%E9%80%89%E6%8B%A9)
+//安装docker-compose
+curl -L "https://github.com/docker/compose/releases/download/1.23.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/bin/docker-compose
+chmod +x /usr/bin/docker-compose
